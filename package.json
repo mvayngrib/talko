@@ -1,0 +1,25 @@
+{
+  "name": "talko",
+  "version": "1.0.0",
+  "description": "p2p client over utp with symmetric API (i.e. no client/server duality)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "p2p",
+    "utp"
+  ],
+  "author": "Mark Vayngrib <mark.vayngrib@lablz.com> (http://github.com/mvayngrib)",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "length-prefixed-stream": "^1.4.0",
+    "re-emitter": "^1.1.1",
+    "readable-stream": "^2.0.2",
+    "safecb": "0.0.1",
+    "sock-plex": "^1.0.1",
+    "stream-combiner2": "^1.0.2",
+    "utp": "mvayngrib/utp"
+  }
+}
