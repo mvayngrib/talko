@@ -14,20 +14,16 @@ function oneRound (cb) {
   var b = newClient('b', bPort, aPort)
 
   var interval = setInterval(function () {
-    if (--i) {
+    if (i--) {
       a.send('hey' + i)
       b.send('yo' + i)
       return
     }
 
-    a.close()
+    a.end()
     if (cb) b.once('close', cb)
     clearInterval(interval)
   }, 100)
-
-  function next () {
-    setTimeout(cb, 200)
-  }
 }
 
 function newClient (name, localPort, remotePort) {

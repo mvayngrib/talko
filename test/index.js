@@ -25,6 +25,18 @@ b.on('data', function (data) {
   data = data.toString()
   console.log('equal', data === msgs[counter++])
   if (counter === msgs.length) {
-    b.close()
+    b.end()
   }
 })
+
+;[a, b].forEach(function (c) {
+  ;['end', 'finish', 'close'].forEach(function (event) {
+    c.once(event, function () {
+      console.log((c === a ? 'a' : 'b'), event)
+    })
+  })
+})
+
+// setInterval(function () {
+//   console.log(process._getActiveHandles())
+// }, 2000).unref()
