@@ -1,8 +1,7 @@
 require('sock-plex')
 var dgram = require('dgram')
 var assert = require('assert')
-var Client = require('../lib/messenger')
-var msgs = require('./fixtures/strings')
+var Client = require('../lib/client2')
 
 var aPort = 12321
 var bPort = 32123
@@ -22,25 +21,24 @@ var b = new Client({
 
 b.name = 'b'
 
+var msgs = ['hey', 'ho', 'there']
 msgs.forEach(a.send, a)
 
-var counter = 0
 b.on('data', function (data) {
   data = data.toString()
-  counter++
-  // console.log('equal', data === msgs[counter++])
-  if (counter === msgs.length) {
+  console.log('equal', data === msgs.shift())
+  if (!msgs.length) {
     b.end()
   }
 })
 
-;[a, b].forEach(function (c) {
-  ;['end', 'finish', 'close'].forEach(function (event) {
-    c.once(event, function () {
-      console.log((c === a ? 'a' : 'b'), event)
-    })
-  })
-})
+// ;[a, b].forEach(function (c) {
+//   ;['end', 'finish', 'close'].forEach(function (event) {
+//     c.once(event, function () {
+//       console.log((c === a ? 'a' : 'b'), event)
+//     })
+//   })
+// })
 
 // setInterval(function () {
 //   console.log(process._getActiveHandles())
