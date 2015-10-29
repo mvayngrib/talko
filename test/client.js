@@ -1,7 +1,7 @@
 require('sock-plex')
 var dgram = require('dgram')
 var assert = require('assert')
-var Client = require('../lib/client2')
+var Client = require('../lib/client')
 
 var aPort = 12321
 var bPort = 32123
