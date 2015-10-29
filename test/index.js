@@ -22,7 +22,9 @@ var b = new Client({
 
 b.name = 'b'
 
-msgs.forEach(a.send, a)
+msgs.forEach(function (m) {
+  a.send(m)
+})
 
 var counter = 0
 b.on('data', function (data) {
