@@ -1,5 +1,5 @@
 {
-  "name": "talko",
+  "name": "@tradle/talko",
   "version": "1.0.0",
   "description": "p2p client over utp with symmetric API (i.e. no client/server duality)",
   "main": "index.js",
@@ -13,6 +13,7 @@
   "author": "Mark Vayngrib <mark.vayngrib@lablz.com> (http://github.com/mvayngrib)",
   "license": "ISC",
   "dependencies": {
+    "@tradle/utp": "0.0.8",
     "debug": "^2.2.0",
     "duplexify": "^3.4.2",
     "length-prefixed-stream": "^1.4.0",
@@ -20,7 +21,6 @@
     "readable-stream": "^2.0.2",
     "safecb": "0.0.1",
     "sock-plex": "^1.0.1",
-    "stream-combiner2": "^1.0.2",
-    "utp": "mvayngrib/utp"
+    "stream-combiner2": "^1.0.2"
   }
 }
