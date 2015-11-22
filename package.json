@@ -1,6 +1,6 @@
 {
   "name": "@tradle/talko",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "p2p client over utp with symmetric API (i.e. no client/server duality)",
   "main": "index.js",
   "scripts": {
